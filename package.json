@@ -1,8 +1,8 @@
 {
-  "name": "angular-scripts",
-  "version": "1.2.3",
-  "description": "Simple AngularJS Boilerplate to kick start your new project with SASS support and Gulp watch/build tasks",
-  "author": "Semianchuk Vitalii",
+  "name": "angularjs-template",
+  "version": "1.0.0",
+  "description": "Simple AngularJS Template with Bootstrap to kick start your new project",
+  "author": "Swapnil Nakate",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.6.6",
