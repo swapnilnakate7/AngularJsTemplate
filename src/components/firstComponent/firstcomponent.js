@@ -1,5 +1,5 @@
 /**
- * Created by semianchuk on 11.10.16.
+ * Created by swapnilnakate on 27.08.17
  */
 angular.module('angularApp')
     .component('firstComponent', {

@@ -1,5 +1,5 @@
 /**
- * Created by semianchuk on 08.10.16.
+ * Created by swapnilnakate on 27.08.17
  */
 angular.module('angularApp')
     .controller('mainController', [ '$scope', 'mainFactory', 'mainService', 'mainProvider', function ($scope, mainFactory, mainService, mainProvider) {
