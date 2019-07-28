@@ -4,8 +4,11 @@ var plumber = require('gulp-plumber');
 var csso = require('gulp-csso');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var once = require('async-once');
 
-gulp.task('sass', function() {
+
+
+gulp.task('sass', async function() {
     gulp.src([
         'public/**/*.scss',
         'src/modules/**/*.scss',
@@ -17,7 +20,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('compress-dev', function() {
+gulp.task('compress-dev', async function() {
     gulp.src([
         'node_modules/angular/angular.js',
         'node_modules/angular-ui-router/release/angular-ui-router.js',
@@ -32,7 +35,7 @@ gulp.task('compress-dev', function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('compress-prod', function() {
+gulp.task('compress-prod', async function() {
     gulp.src([
         'node_modules/angular/angular.js',
         'node_modules/angular-ui-router/release/angular-ui-router.js',
@@ -48,12 +51,12 @@ gulp.task('compress-prod', function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('watch', function() {
-    gulp.watch('public/styles/*.scss', ['sass']);
-    gulp.watch('src/modules/**/*.scss', ['sass']);
-    gulp.watch('src/**/*.js', ['compress-dev']);
-    gulp.watch('app.js', ['compress-dev']);
+gulp.task('watch',  function() {
+    gulp.watch('public/styles/*.scss', gulp.series('sass'));
+    gulp.watch('src/modules/**/*.scss', gulp.series('sass'));
+    gulp.watch('src/**/*.js', gulp.series('compress-dev'));
+    gulp.watch('app.js', gulp.series('compress-dev'));
 });
 
-gulp.task('dev',  ['sass', 'compress-dev' , 'watch']);
-gulp.task('build', ['sass', 'compress-prod']);
+gulp.task('dev',  gulp.parallel('sass', 'compress-dev' , 'watch'));
+gulp.task('build', gulp.parallel('sass', 'compress-prod'));
