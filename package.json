@@ -20,7 +20,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^2.1.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "path": "*",
     "path-exists": "^4.0.0",
     "popper.js": "^1.15.0"
