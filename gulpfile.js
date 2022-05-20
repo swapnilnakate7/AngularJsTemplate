@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('node-sass'));
 var plumber = require('gulp-plumber');
 var csso = require('gulp-csso');
 var uglify = require('gulp-uglify');
