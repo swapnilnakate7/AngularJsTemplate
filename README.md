@@ -1,4 +1,5 @@
 # AngularJsTemplate
+[![Node.js CI](https://github.com/swapnilnakate7/AngularJsTemplate/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/swapnilnakate7/AngularJsTemplate/actions/workflows/node.js.yml)
 Latest Bootstrap and AngularJS read to start Template
 * Download As .zip and then extract
 * start npm go to unzipped directory
